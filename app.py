@@ -7,7 +7,7 @@ from ultralytics import YOLO
 import io
 
 # Define the classes
-classes = ["Glioma", "Meningioma", "No Tumor", "Pituitary"]
+classes = ["Fracture"]
 
 # Function to load the YOLO model
 def load_model(model_path):
@@ -44,8 +44,8 @@ def detect_and_plot(image, model):
     return buf
 
 # Streamlit app setup
-st.set_page_config(page_title="Brain Tumor Detector", layout="centered")
-st.markdown("<h1 style='text-align: center; color: #FF0800;'>Brain Tumor Detector</h1>", unsafe_allow_html=True)
+st.set_page_config(page_title="Hand Bone Fracture Detector", layout="centered")
+st.markdown("<h1 style='text-align: center; color: #FF0800;'>Hand Bone Fracture Detector</h1>", unsafe_allow_html=True)
 
 st.subheader("Upload Image")
 uploaded_image = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
@@ -62,7 +62,7 @@ if uploaded_image is not None:
     image_np = np.array(image)
     
     # Load the YOLO model
-    model_path = 'BRAIN_TUMOR_DETECTOR_model.pt'  # Update this path to your model
+    model_path = 'HAND_BONE_FRACTURE_DETECTOR_model.pt'  # Update this path to your model
     model = load_model(model_path)
     
     if model is not None:
