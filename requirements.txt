@@ -4,4 +4,4 @@ numpy
 matplotlib
 ultralytics
 torch
-opencv-python-headless
+opencv-python
